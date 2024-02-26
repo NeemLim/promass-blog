@@ -19,7 +19,7 @@ Siga estos pasos para configurar el proyecto en su entorno local.
 Clone el repositorio de GitHub a su computadora local usando el siguiente comando en su terminal:
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/NeemLim/promass-blog.git
 ```
 
 ### Instalar Dependencias
