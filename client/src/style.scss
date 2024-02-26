@@ -1,0 +1,492 @@
+$lightGreen: #85b2ff;
+$blue: #6e9bfe;
+
+.app {
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 1024px;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+    //LOGIN & REGISTER
+
+    .auth {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: $lightGreen;
+
+      h1 {
+        font-size: 20px;
+        color: teal;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        background-color: white;
+        width: 200px;
+        gap: 20px;
+
+        input {
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid gray;
+        }
+
+        button {
+          padding: 10px;
+          border: none;
+          background-color: teal;
+          cursor: pointer;
+          color: white;
+        }
+
+        p {
+          font-size: 12px;
+          color: red;
+          text-align: center;
+        }
+
+        span {
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+
+    //NAVBAR
+
+.navbar {
+  .container {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column; // Use column layout to stack categories below the main row
+
+    .top-row {
+      // Encapsulate the top row elements
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .logo img {
+        width: 120px;
+      }
+
+      .search-container form {
+        display: flex;
+        align-items: center;
+
+        input[type="text"],
+        select {
+          margin-right: 10px;
+          padding: 5px;
+        }
+
+        button {
+          padding: 5px 10px;
+          margin-right: 10px; // Separate from the clear button
+
+          &.clear-search {
+            // Clear Search button styling
+            margin-right: 0; // No margin on the right
+          }
+        }
+      }
+
+      .user-info {
+        // Encapsulate user-related actions (login, logout, write)
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .action-button {
+          // General style for action buttons
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 300;
+          cursor: pointer;
+          border: 1px solid transparent;
+          transition: background-color 0.3s, border-color 0.3s;
+
+          &.login {
+            // Specific style for login
+            background-color: #2ecc71; // Green color
+
+            &:hover {
+              background-color: darken(#2ecc71, 10%);
+              border-color: darken(#2ecc71, 10%);
+            }
+          }
+
+          &.logout {
+            // Specific style for logout
+            background-color: #e74c3c; // Red color
+
+            &:hover {
+              background-color: darken(#e74c3c, 10%);
+              border-color: darken(#e74c3c, 10%);
+            }
+          }
+
+          &.write {
+            // Style for write button
+            background-color: $lightGreen; // Adjust the variable as per your color scheme
+
+            &:hover {
+              color: teal;
+              background-color: white;
+              border-color: teal;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      // Style for category links
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px; // Add some space between the top row and category links
+
+      h6 {
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+    //FOOTER
+
+    footer {
+      margin-top: 100px;
+      padding: 20px;
+      background-color: $lightGreen;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      img {
+        height: 50px;
+      }
+    }
+
+    //HOME
+
+    .home {
+      .posts {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+
+        .post {
+          display: flex;
+          gap: 100px;
+
+          &:nth-child(2n + 1) {
+            flex-direction: row-reverse;
+          }
+
+          .img {
+            flex: 2;
+            position: relative;
+
+            &::after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              background-color: $lightGreen;
+              position: absolute;
+              top: 20px;
+              left: -20px;
+              z-index: -1;
+            }
+
+            img {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+            }
+          }
+
+          .content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1 {
+              font-size: 48px;
+            }
+
+            p {
+              font-size: 18px;
+            }
+
+            button {
+              width: max-content;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: white;
+              border: 1px solid teal;
+              color: teal;
+
+              &:hover {
+                border: 1px solid white;
+                background-color: $lightGreen;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+
+        .no-matches {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 20px;
+          color: #999;
+        }
+
+    //SINGLE
+
+    .single {
+      display: flex;
+      gap: 50px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 14px;
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .edit {
+          display: flex;
+          gap: 5px;
+
+          img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+          }
+        }
+
+        h1 {
+          font-size: 42px;
+          color: #333;
+        }
+
+        p {
+          text-align: justify;
+          line-height: 30px;
+        }
+      }
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        h1 {
+          font-size: 20px;
+          color: #555;
+        }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+
+          h2 {
+            color: #555;
+          }
+
+          button {
+            width: max-content;
+            padding: 7.5px 15px;
+            border: none;
+            cursor: pointer;
+            color: teal;
+            background-color: white;
+            border: 1px solid teal;
+
+            &:hover {
+              border: 1px solid white;
+              background-color: $lightGreen;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    //WRITE
+
+        .login-required {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh; // Full viewport height
+    
+          p {
+            padding: 20px;
+            background-color: #f8d7da; // Light red for the background
+            color: #721c24; // Dark red for the text
+            border: 1px solid #f5c6cb; // Border color
+            border-radius: 5px;
+            font-size: 20px;
+          }
+        }
+
+    .add {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input {
+          padding: 10px;
+          border: 1px solid lightgray;
+        }
+
+        .editorContainer {
+          height: 300px;
+          overflow: scroll;
+          border: 1px solid lightgray;
+
+          .editor {
+            height: 100%;
+            border: none;
+          }
+        }
+      }
+
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .item {
+          border: 1px solid lightgray;
+          padding: 10px;
+          flex:1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 12px;
+          color: #555;
+
+          h1{
+            font-size: 20px;
+          }
+
+          .file{
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+          .buttons{
+            display: flex;
+            justify-content: space-between;
+
+            :first-child{
+              cursor: pointer;
+              color: teal;
+              background-color: white;
+              border: 1px solid teal;
+              padding: 3px 5px;
+            }
+            :last-child{
+              cursor: pointer;
+              color: white;
+              background-color: teal;
+              border: 1px solid teal;
+              padding: 3px 5px;
+            }
+          }
+
+          .cat{
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            color: teal;
+          }
+        }
+      }
+      .dialog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        .dialog-content {
+          background: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+          p {
+            margin: 0 0 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
